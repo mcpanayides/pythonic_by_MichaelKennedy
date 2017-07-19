@@ -15,14 +15,14 @@ def getBirthday():
     return birthday
 
 
-def compute(originalDate, dateNow):
-    date1 = dateNow
-    date2 = datetime.datetime(dateNow.year, originalDate.month, originalDate.day)
+def compute(original_date, now):
+    date1 = now
+    date2 = datetime.datetime(now.year, original_date.month, original_date.day)
     deltaTime = date1 - date2
     days = int(deltaTime.total_seconds() / 60 / 60 / 24)
     return days
 
-def printBirthday_information():
+def printBirthday_information(days):
     if days < 0:
         print('Your Birthday is in {} days'.format(-days))
     elif days > 0:
@@ -33,9 +33,9 @@ def printBirthday_information():
 def main():
     printHeader()
     bDay = getBirthday()
-    now = datetime.datetime.dateNow()
-    numberofDays = compute(birthday, dateNow)
-    printBirthday_information()
+    now = datetime.datetime.now()
+    numberofDays = compute(bDay, now)
+    printBirthday_information(numberofDays)
     input('Press any key to Exit.')
 
 
