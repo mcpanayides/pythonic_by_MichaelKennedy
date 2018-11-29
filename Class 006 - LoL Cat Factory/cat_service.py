@@ -15,6 +15,5 @@ def get_data_from_url(url):
 
 def save_image(folder, name, data):
     file_name = os.path.join(folder, name + '.jpg')
-    print(file_name)
     with open(file_name, 'wb') as fout:
         shutil.copyfileobj(data, fout)
